@@ -1,5 +1,13 @@
 import json
-
+"""
+仿生头表情的json格式
+{
+    exp_name:[
+        [xxxx],
+        [xxxx],
+    ]
+}
+"""
 # 手动构建JSON格式，支持多级列表
 def format_value(value, indent_level):
     """递归格式化值"""

@@ -1,7 +1,7 @@
 import csv
 import json
 
-file_path = '/home/myf/myf/work_space/ARServo/data/processed/generated2_标准表情循环_noise.json'  # 替换为你的JSON文件路径
+file_path = '/home/myf/myf/work_space/ARServo/data/raw/recorded/trans_3.json'  # 替换为你的JSON文件路径
 
 def list_to_csv(data, filename):
     with open(filename, 'w', newline='', encoding='utf-8') as f:
@@ -10,9 +10,9 @@ def list_to_csv(data, filename):
 
 with open(file_path, 'r', encoding='utf-8') as f:
     data = json.load(f)
-    exp = data['servos_generated_data2_标准表情循环_noise']  # 替换为你的表情名称
+    exp = data['trans_3']  # 替换为你的表情名称
 
 print(exp)
-list_to_csv(exp, '/home/myf/myf/work_space/ARServo/data/processed/servo_generated2_标准表情循环_noise.csv')  # 替换为你想要保存的CSV文件名
+list_to_csv(exp, '/home/myf/myf/work_space/ARServo/data/raw/recorded/trans_3.csv')  # 替换为你想要保存的CSV文件名
 
 

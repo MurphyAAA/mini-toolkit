@@ -222,13 +222,15 @@ if __name__ == '__main__':
     import json
     from custom_json_format import format_dict
     '''
-    file_name = "/home/myf/myf/work_space/tools/expression_zhaojun_F03.json"
-    output_file = 'processed_expression_zhaojun_F03.json'
+    # 表情插值扩展
+    file_name = "/home/myf/myf/work_space/tools/exp3.json"
+    output_file = 'processed_expression_xishiG2_F03.json'
     with open(file_name, 'r', encoding='UTF-8') as f:
         expression = json.load(f)
 
     res_frames = {}
-    exp_list = ['微笑', '跳舞', '开心', '点头同意', '调皮', '享受', '生气', '惊讶', '震惊', '惊喜', '难过']
+    # exp_list = ['微笑', '跳舞', '开心', '点头同意', '调皮', '享受', '生气', '惊讶', '震惊', '惊喜', '难过']
+    exp_list = ['点头', '高兴', '害怕', '害羞', '紧张', '怀疑', '惊讶', '生气', '微笑', '厌恶', '伤心']
     # 遍历json所有表情，分别进行插值
     for exp_name in exp_list:
         target_time = 5000 # ms
@@ -253,5 +255,5 @@ if __name__ == '__main__':
 
     '''
 
-    result = global_bezier_interpolation([[1]],10)
-    print(result)
+    # result = global_bezier_interpolation([[1]],10)
+    # print(result)

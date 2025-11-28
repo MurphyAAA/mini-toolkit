@@ -28,6 +28,6 @@ def concatenate_csv_files(data_path, output_file):
 
 if __name__ == "__main__":
 
-    data_path = '/home/myf/myf/work_space/ARServo/data/processed/'
-    output_file = '/home/myf/myf/work_space/ARServo/data/processed/merged_dataset.csv'
+    data_path = '/home/myf/myf/work_space/ARServo/data/raw/recorded/filtered_dataset'
+    output_file = '/home/myf/myf/work_space/ARServo/data/raw/recorded/filtered_dataset/filtered_dataset31k.csv'
     concatenate_csv_files(data_path, output_file)
