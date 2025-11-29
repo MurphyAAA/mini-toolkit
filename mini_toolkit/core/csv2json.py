@@ -25,9 +25,21 @@ def csv_to_json(csv_file: str, output_file: str = None) -> str:
         output_file = os.path.splitext(csv_file)[0] + '.json'
 
     # 读取 CSV 并转换为二维列表
+
+    # 判断字符串是否为数字
+    def is_numeric(x: str) -> bool:
+        try:
+            float(x)
+            return True
+        except ValueError:
+            return False
+
+    data: List[List] = []
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
-        data: List[List[float]] = [[float(x) for x in row] for row in reader]
+        for row in reader:
+            new_row = [float(x) if is_numeric(x) else x for x in row]
+            data.append(new_row)
 
     # 写入 JSON 文件
     key = os.path.splitext(os.path.basename(output_file))[0] # key
