@@ -1,8 +1,9 @@
 一些常用工具
 ## 安装
-python -m build # 打包whl
-pip install dist/mini_toolkit-0.1.0-py3-none-any.whl
-
+```shell
+    python -m build # 打包whl
+    pip install dist/mini_toolkit-0.1.0-py3-none-any.whl
+```
 
 
 ## 目录
@@ -22,6 +23,7 @@ pip install dist/mini_toolkit-0.1.0-py3-none-any.whl
 ##### 导入
 ```python
     from mini_toolkit.core.concat_csv import concatenate_csv_files
+    
     concatenate_csv_files("./dataset", "merged.csv")
 ```
 
@@ -60,6 +62,7 @@ pip install dist/mini_toolkit-0.1.0-py3-none-any.whl
 ##### 导入
 ```python
     from mini_toolkit.core.csv2json import csv_to_json
+    
     csv_to_json("data.csv", output_file="data.json")
 ```
 
