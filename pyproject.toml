@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini_toolkit"            # 你的包名（别人 pip install 时看到的名字）
+version = "0.1.0"
+description = "A collection of useful tools"
+readme = "README.md"
+authors = [
+    {name="MYF"}
+]
+requires-python = ">=3.9"
+dependencies = [   # 如果工具需要依赖，可加到这里
+    "pandas",
+    "numpy",
+    "scipy",
+    "scikit-learn"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mini_toolkit*"]
+
+# ---- 命令行脚本入口（关键） ----
+[project.scripts]
+concat_csv = "mini_toolkit.cli:main_concat_csv"
+json2csv = "mini_toolkit.cli:main_json2csv"
+csv2json = "mini_toolkit.cli:main_csv2json"

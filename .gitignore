@@ -8,3 +8,5 @@ env/
 build/
 develop-eggs/
 dist/
+.vscode/
+*.egg-info/

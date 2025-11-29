@@ -9,7 +9,7 @@ import json
 }
 """
 # 手动构建JSON格式，支持多级列表
-def format_value(value, indent_level):
+def _format_value(value, indent_level):
     """递归格式化值"""
     indent = '    ' * indent_level
     
@@ -41,7 +41,7 @@ def format_dict(obj, indent_level=0):
     
     items = list(obj.items())
     for i, (key, value) in enumerate(items):
-        result += f'{indent}    "{key}": {format_value(value, indent_level + 1)}'
+        result += f'{indent}    "{key}": {_format_value(value, indent_level + 1)}'
         if i < len(items) - 1:
             result += ','
         result += '\n'
