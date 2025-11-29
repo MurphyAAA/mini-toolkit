@@ -1,7 +1,6 @@
 一些常用工具
 ## 安装
 ```shell
-    python -m build # 打包whl
     pip install dist/mini_toolkit-0.1.0-py3-none-any.whl
 ```
 
