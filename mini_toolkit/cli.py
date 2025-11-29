@@ -27,8 +27,9 @@ def main_concat_csv():
     parser = argparse.ArgumentParser(description="Concatenate multiple CSV files in a folder")
     parser.add_argument("-d", "--dir", required=True, help="Directory containing CSV files")
     parser.add_argument("-o", "--output", required=True, help="Output CSV file path")
+    parser.add_argument("-m", "--mode", default="vertical", choices=["vertical", "horizontal"], help="Concatenation mode: vertical or horizontal")
     args = parser.parse_args()
-    out_file = concat_csv.concatenate_csv_files(args.dir, args.output)
+    out_file = concat_csv.concatenate_csv_files(args.dir, args.output, mode=args.mode)
     if out_file:
         print(f"[INFO] Concatenated CSV files into: {out_file}")
     else:

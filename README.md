@@ -18,12 +18,12 @@
 ```
 - -d / --data-path: folder containing CSV files
 - -o / --output: output CSV file
-
+- -m / --mode: concatenation mode: vertical or horizontal (default: "vertical")
 ##### 导入
 ```python
     from mini_toolkit.core.concat_csv import concatenate_csv_files
     
-    concatenate_csv_files("./dataset", "merged.csv")
+    concatenate_csv_files("./dataset", "merged.csv", "vertical")
 ```
 
 ### 2. json2csv.py
