@@ -2,6 +2,7 @@ import argparse
 import mini_toolkit.core.csv2json as csv2json
 import mini_toolkit.core.json2csv as json2csv
 import mini_toolkit.core.concate_csv as concat_csv
+import mini_toolkit.core.HeadConfigChecker as HeadConfigChecker
 
 
 def main_json2csv():
@@ -34,3 +35,21 @@ def main_concat_csv():
         print(f"[INFO] Concatenated CSV files into: {out_file}")
     else:
         print("[WARNING] No CSV files were concatenated.")
+
+def main_check_head_config():
+    parser = argparse.ArgumentParser(description="检查头模组配置文件中的舵机对称性和默认值")
+    # parser.add_argument("-f", "--file", default="/home/myf/myf/work_space/em/config/head.json", help="头模组配置文件路径")
+    # parser.add_argument("-n", "--name", default="xishiG2_F02_ID05", help="要检查的头模组名称")
+    parser.add_argument("-f", "--file", required=True, help="头模组配置文件路径")
+    parser.add_argument("-n", "--name", required=True, help="要检查的头模组名称")
+    args = parser.parse_args()
+    
+    # 使用HeadConfigChecker类
+    checker = HeadConfigChecker.HeadConfigChecker(args.file, args.name)
+    result = checker.run_checks()
+    
+    if result:
+        print(f"[INFO] 头模组配置检查完成: {args.file} - {args.name}")
+    else:
+        print(f"[WARNING] 头模组配置检查失败或发现异常: {args.file} - {args.name}")
+

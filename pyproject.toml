@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mini_toolkit"            # 你的包名（别人 pip install 时看到的名字）
-version = "0.1.0"
+version = "0.1.1"
 description = "A collection of useful tools"
 readme = "README.md"
 authors = [
@@ -27,3 +27,4 @@ include = ["mini_toolkit*"]
 concat_csv = "mini_toolkit.cli:main_concat_csv"
 json2csv = "mini_toolkit.cli:main_json2csv"
 csv2json = "mini_toolkit.cli:main_csv2json"
+config_detector = "mini_toolkit.cli:main_check_head_config"
